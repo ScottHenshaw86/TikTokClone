@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dimensions, View, StyleSheet, TouchableWithoutFeedback, Text, Image } from 'react-native';
+import { Dimensions, View, StyleSheet, TouchableWithoutFeedback, Text, Image, TouchableOpacity } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -11,11 +11,22 @@ import Harvey from '../../assets/images/harvey.jpg';
 
 const Post = (props) => {
     const [paused, setPaused] = useState(false);
-    
-    const { post } = props;
+    const [post, setPost] = useState(props.post);
+    const [isLiked, setIsLiked] = useState(false);
+
+    // const { post } = props;
     
     const onPlayPausePress = () => {
         setPaused(!paused);
+    };
+
+    const onLikePress = () => {
+        const likesToAdd = isLiked ? -1 : 1;
+        setPost({
+            ...post,
+            likes: post.likes + likesToAdd,
+        });
+        setIsLiked(!isLiked);
     };
 
     return (
@@ -36,14 +47,17 @@ const Post = (props) => {
                             <View style={styles.profilePictureContainer}>
                                 <Image style={styles.profilePicture} source={{uri: post.user.imageUri}} />
                             </View>
-                            <View style={styles.iconContainer}>
-                                <AntDesign name={"heart"} size={40} color="white" />
+
+                            <TouchableOpacity style={styles.iconContainer} onPress={onLikePress}>
+                                <AntDesign name={"heart"} size={40} color={isLiked ? '#ED2939' : 'white'} />
                                 <Text style={styles.statsLabel}>{post.likes}</Text>
-                            </View>
+                            </TouchableOpacity>
+
                             <View style={styles.iconContainer}>
                                 <FontAwesome name={"commenting"} size={40} color="white" />
                                 <Text style={styles.statsLabel}>{post.comments}</Text>
                             </View>
+
                             <View style={styles.iconContainer}>
                                 <Fontisto name={"share-a"} size={35} color="white" />
                                 <Text style={styles.statsLabel}>{post.shares}</Text>
