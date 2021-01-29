@@ -6,6 +6,7 @@
  * @flow strict-local
  */
 
+ import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -13,13 +14,14 @@ import {
 } from 'react-native';
 
 import Home from './src/screens/Home';
+import RootNavigation from './src/navigation';
 
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-				<Home />
+      <StatusBar barStyle="light-content" backgroundColor="black"/>
+      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+				<RootNavigation />
       </SafeAreaView>
     </>
   );
