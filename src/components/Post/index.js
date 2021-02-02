@@ -71,10 +71,10 @@ const Post = (props) => {
 
                                 <View style={styles.songRow}>
                                     <Entypo name={"beamed-note"} size={22} color="white" />
-                                    <Text style={styles.songName}>{post.songName}</Text>
+                                    <Text style={styles.songName}>{post.song.name}</Text>
                                 </View>
                             </View>
-                            <Image style={styles.songImage} source={{uri: post.songImage}} />
+                            <Image style={styles.songImage} source={{uri: post.song.imageUri}} />
                         </View>
                     </View>
                 </View>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     },
     container: {
         width: '100%',
-        height: Dimensions.get('window').height,
+        height: Dimensions.get('window').height - 50,
     },
     description: {
         color: '#fff',

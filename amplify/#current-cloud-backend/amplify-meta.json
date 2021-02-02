@@ -1,0 +1,65 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tiktok-tiktok-121132-authRole",
+      "UnauthRoleArn": "arn:aws:iam::636546953014:role/amplify-tiktok-tiktok-121132-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::636546953014:role/amplify-tiktok-tiktok-121132-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tiktok-tiktok-121132-deployment",
+      "UnauthRoleName": "amplify-tiktok-tiktok-121132-unauthRole",
+      "StackName": "amplify-tiktok-tiktok-121132",
+      "StackId": "arn:aws:cloudformation:us-east-1:636546953014:stack/amplify-tiktok-tiktok-121132/33b26730-643b-11eb-aacd-0eb21ddd4aff",
+      "AmplifyAppId": "d1jbraq9g7ym7z"
+    }
+  },
+  "api": {
+    "tiktok": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "yh3zmwcgyvg63m2aqnyi7keuii",
+        "GraphQLAPIEndpointOutput": "https://465hmcknpjcfxecvl6ykuaruri.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ilei6noy4rhjlg5g6ees673tai"
+      },
+      "lastPushTimeStamp": "2021-02-01T06:27:18.932Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-tiktok-tiktok-121132-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apitiktok"
+      },
+      "lastPushDirHash": "EmHjDe0WNu6Edq3ixMEY1RJ0JWk="
+    }
+  },
+  "auth": {
+    "tiktok8ec174d5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-tiktok-tiktok-121132-deployment/amplify-cfn-templates/auth/tiktok8ec174d5-cloudformation-template.yml",
+        "logicalId": "authtiktok8ec174d5"
+      },
+      "lastPushTimeStamp": "2021-02-01T06:27:18.941Z",
+      "output": {
+        "AppClientSecret": "37f5768185891sv3skkdc5cmvh0qgfdke2ekpufj4miu7f73b6p",
+        "UserPoolId": "us-east-1_vtv1vajq5",
+        "AppClientIDWeb": "4e913aehas6n802mdp9412usm1",
+        "AppClientID": "4m1ddvb9ucd3d18gscu2qk228a",
+        "IdentityPoolId": "us-east-1:78c0e6e6-10da-4ac5-b365-3a47f672b35c",
+        "IdentityPoolName": "tiktok8ec174d5_identitypool_8ec174d5__tiktok",
+        "UserPoolName": "tiktok8ec174d5_userpool_8ec174d5"
+      },
+      "lastPushDirHash": "jFZ3L01Iwefjsl/inWiim1x6+ek="
+    }
+  }
+}
